@@ -4,7 +4,7 @@ import Test from "./components/Test";
 function Home() {
   return (
     <div>
-      <Test name="gtrmgoitrgmtro" />
+      <Test name="gtrmgoitrgmtro" description="This is a test description." />
     </div>
   );
 }
