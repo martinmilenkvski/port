@@ -2,8 +2,8 @@ interface NavigationBarProps {}
 
 function NavigationBar(props: NavigationBarProps) {
   return (
-    <nav className="flex justify-between items-center p-4">
-      <ul className="flex gap-4 justify-between">
+    <nav className="flex p-4 w-full">
+      <ul className="flex gap-4 justify-between w-full">
         <li>HOME</li>
         <li>PORTFOLIO</li>
         <li>CONTACT</li>
