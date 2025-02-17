@@ -13,32 +13,37 @@ const HeroSection: React.FC<HeroProps> = ({ name }) => {
         </h1>
       </div>
 
-      <div className="flex justify-center items-center gap-4">
-        <a
-          href=" " // github link  here
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2"
-        >
-          <p>Git</p>
-        </a>
-        <a
-          href=" " // dribble link  here
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2"
-        >
-          <p>Drb</p>
-        </a>
+      <div className="flex justify-between items-center gap-4 p-4">
+        <p>* Based in Skopje</p>
+        <p>Frontend Developer | Designer | Digital logistics expert </p>
+        {/* Socail links */}
+        <div className="flex gap-4">
+          <a
+            href=" " // github link  here
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2"
+          >
+            <p>Git</p>
+          </a>
+          <a
+            href=" " // dribble link  here
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2"
+          >
+            <p>Drb</p>
+          </a>
 
-        <a
-          href=" " // github link  here
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2"
-        >
-          <p>Ig</p>
-        </a>
+          <a
+            href=" " // github link  here
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2"
+          >
+            <p>Ig</p>
+          </a>
+        </div>
       </div>
       <video
         src="https://videos.pexels.com/video-files/6986423/6986423-uhd_2732_1440_25fps.mp4"
