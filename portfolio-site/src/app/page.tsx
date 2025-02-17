@@ -1,5 +1,6 @@
 import React from "react";
 import Test from "./components/Test";
+import NavigationBar from "./components/NavBar";
 
 export const metadata = {
   title: "Martin Portfolio",
@@ -8,7 +9,9 @@ export const metadata = {
 function Home() {
   return (
     <div>
-      <Test name="gtrmgoitrgmtro" />
+      
+      <NavigationBar />
+      <Test name="gtrmgoitrgmtro" description="This is a test description." />
     </div>
   );
 }
