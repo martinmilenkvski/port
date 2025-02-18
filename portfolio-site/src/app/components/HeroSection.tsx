@@ -1,7 +1,9 @@
-interface HeroProps
+"use client";
 
-{name: string
+import { motion } from "framer-motion";
 
+interface HeroProps {
+  name: string;
 }
 
 const HeroSection: React.FC<HeroProps> = ({ name }) => {
@@ -45,14 +47,18 @@ const HeroSection: React.FC<HeroProps> = ({ name }) => {
           </a>
         </div>
       </div>
-      <video
+
+      <motion.video
         src="https://videos.pexels.com/video-files/6986423/6986423-uhd_2732_1440_25fps.mp4"
         autoPlay
         muted
         loop
-      ></video>
+        initial={{ clipPath: "inset(0 100% 0 0)" }}
+        animate={{ clipPath: "inset(0 0% 0 0)" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      ></motion.video>
     </div>
   );
-}
+};
 
 export default HeroSection;
