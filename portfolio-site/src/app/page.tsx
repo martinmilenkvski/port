@@ -11,7 +11,10 @@ export const metadata = {
 function Home() {
   return (
     <div>
-      <NavigationBar />
+      <MotionBox>
+        <NavigationBar />
+      </MotionBox>
+
       <MotionBox>
         <Test name="gtrmgoitrgmtro" description="This is a test description." />
       </MotionBox>
