@@ -137,7 +137,7 @@ function ProjectsSection() {
                   {project.number}
                 </motion.span>
                 <motion.h3
-                  className="text-5xl md:text-7xl font-bold tracking-tighter"
+                  className="text-7xl md:text-9xl font-bold tracking-tighter"
                   initial={{ y: 100 }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
