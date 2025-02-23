@@ -10,7 +10,7 @@ const HeroSection: React.FC<HeroProps> = ({ name }) => {
   return (
     <div className=" justify-center items-center">
       <div className="flex justify-center flex-col">
-        <h1 className="m-0 leading-none text-[330px] align-center inline">
+        <h1 className="m-0 leading-none text-[330px] align-center">
           {name}
         </h1>
       </div>
