@@ -18,25 +18,25 @@ function ProjectsSection() {
       id: "01",
       number: "01",
       title: "KONTRANS",
-      image: "https://picsum.photos/seed/brand/300/200",
+      image: "https://picsum.photos/seed/brand/300/400",
     },
     {
       id: "02",
       number: "02",
       title: "OSA ENGINEERING",
-      image: "https://picsum.photos/seed/digital/300/200",
+      image: "https://picsum.photos/seed/digital/300/400",
     },
     {
       id: "03",
       number: "03",
       title: "OFFICE PLANNER",
-      image: "https://picsum.photos/seed/video/300/200",
+      image: "https://picsum.photos/seed/video/300/400",
     },
     {
       id: "04",
       number: "04",
       title: "WEB PRESENCE",
-      image: "https://picsum.photos/seed/web/300/200",
+      image: "https://picsum.photos/seed/web/300/400",
     }
 
   ];
@@ -161,7 +161,7 @@ function ProjectsSection() {
             }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed pointer-events-none w-[300px] h-[200px] z-50"
+            className="fixed pointer-events-none w-[400px] h-[300px] z-50"
             style={{
               top: 0,
               left: 0,
@@ -172,7 +172,7 @@ function ProjectsSection() {
               src={hoveredProject.image}
               alt={hoveredProject.title}
               fill
-              className="object-cover rounded-lg"
+              className="object-cover -z-10"
               priority
             />
           </motion.div>

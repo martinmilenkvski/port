@@ -1,23 +1,34 @@
+"use client";
 
-
-
-import Link from 'next/link';
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface NavBarProps {}
 
-function NavBar(props: NavBarProps) {
+const NavBar: React.FC<NavBarProps> = () => {
+  const navItems = ["HOME", "PORTFOLIO", "CONTACT", "ABOUT"];
+
   return (
-    <nav className="flex p-4 w-full">
+    <motion.nav
+      className="flex p-4 w-full"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <ul className="flex gap-4 justify-between w-full">
-        <li>HOME</li>
-        <li>PORTFOLIO</li>
-        <li>CONTACT</li>
-        <li>
-          <Link href="/about">ABOUT</Link>
-        </li>
+        {navItems.map((item, index) => (
+          <motion.li
+            key={item}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+          >
+            {item === "ABOUT" ? <Link href="/about">{item}</Link> : item}
+          </motion.li>
+        ))}
       </ul>
-    </nav>
+    </motion.nav>
   );
-}
+};
 
 export default NavBar;
