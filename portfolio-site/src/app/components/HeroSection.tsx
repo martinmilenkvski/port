@@ -1,18 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { HyperText } from "./hyper-text";
 
 interface HeroProps {
   name: string;
 }
 
 const HeroSection: React.FC<HeroProps> = ({ name }) => {
+  const letters = Array.from(name);
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 * i },
+    }),
+  };
+
+  const child = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
   return (
     <div className=" justify-center items-center">
       <div className="flex justify-center flex-col">
-        <h1 className="m-0 leading-none text-[330px] align-center">
-          {name}
-        </h1>
+        <motion.h1
+          className="m-0 leading-none text-[330px] align-center"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+        >
+          {letters.map((letter, index) => (
+            <motion.span key={index} variants={child}>
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h1>
       </div>
 
       <div className="flex justify-between items-center gap-4 p-4">
@@ -55,7 +96,7 @@ const HeroSection: React.FC<HeroProps> = ({ name }) => {
         loop
         initial={{ clipPath: "inset(0 100% 0 0)" }}
         animate={{ clipPath: "inset(0 0% 0 0)" }}
-        transition={{ duration: 1, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
       ></motion.video>
     </div>
   );
