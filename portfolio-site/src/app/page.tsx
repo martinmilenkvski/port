@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import MotionBox from "./components/MotionBox";
 import ScrollAnimation from "./components/ScrollAnimation";
 import ProjectsSection from "./components/ProjectSection";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "Martin Portfolio",
@@ -29,6 +30,7 @@ function Home() {
         </div>
       </ScrollAnimation>
       <ProjectsSection />
+      <Footer />
     </div>
   );
 }

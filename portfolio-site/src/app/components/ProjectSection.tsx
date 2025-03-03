@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation"; // Ensure useRouter is imported
 
 interface Project {
   id: string;
@@ -48,6 +49,7 @@ function ProjectsSection() {
   // Reference to the section for tracking in-view status
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const router = useRouter();
 
   // Update mouse position relative to the section
   useEffect(() => {
@@ -92,6 +94,10 @@ function ProjectsSection() {
     },
   };
 
+  const handleProjectClick = (projectId: string) => {
+    router.push(`/projects/${projectId}`);
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -125,6 +131,7 @@ function ProjectsSection() {
               className="group cursor-pointer"
               onMouseEnter={() => setHoveredProject(project)}
               onMouseLeave={() => setHoveredProject(null)}
+              onClick={() => handleProjectClick(project.id)} // Add onClick handler
               variants={itemVariants}
             >
               <div className="flex items-baseline gap-4 overflow-hidden">
