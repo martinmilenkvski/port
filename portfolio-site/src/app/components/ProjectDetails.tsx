@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 
 interface ProjectDetailsProps {
   project: {
@@ -9,15 +8,10 @@ interface ProjectDetailsProps {
     description: string;
     image: string;
   };
+  onBack?: () => void;
 }
 
-const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
-  const router = useRouter();
-
-  const handleBack = () => {
-    router.push("/projects");
-  };
-
+const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, onBack }) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: 100 }}
@@ -26,9 +20,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
       transition={{ duration: 0.5 }}
       className="min-h-screen p-8 bg-gray-900 text-white"
     >
-      <button onClick={handleBack} className="mb-4 text-sm text-gray-400">
-        Back to Projects
-      </button>
+      {onBack && (
+        <button onClick={onBack} className="mb-4 text-sm text-gray-400">
+          Back to Projects
+        </button>
+      )}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

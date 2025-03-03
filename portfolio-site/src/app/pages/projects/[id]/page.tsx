@@ -1,6 +1,6 @@
 import React from "react";
-import { useRouter } from "next/router";
-import ProjectDetails from "../../components/ProjectDetails";
+import ProjectDetails from "../../../components/ProjectDetails";
+import { useRouter } from "next/navigation";
 
 // Sample project data
 const projects = [
@@ -30,16 +30,24 @@ const projects = [
   },
 ];
 
-const ProjectPage = () => {
-  const router = useRouter();
-  const { id } = router.query;
+interface Props {
+  params: { id: string };
+}
+
+const ProjectPage = ({ params }: Props) => {
+  const { id } = params;
   const project = projects.find((project) => project.id === id);
+  const router = useRouter();
 
   if (!project) {
     return <p>Project not found</p>;
   }
 
-  return <ProjectDetails project={project} />;
+  const handleBack = () => {
+    router.push("/projects");
+  };
+
+  return <ProjectDetails project={project} onBack={handleBack} />;
 };
 
 export default ProjectPage;
