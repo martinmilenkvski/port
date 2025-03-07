@@ -6,6 +6,7 @@ import MotionBox from "./components/MotionBox";
 import ScrollAnimation from "./components/ScrollAnimation";
 import ProjectsSection from "./components/ProjectSection";
 import Footer from "./components/Footer";
+import CircularText from './components/CircularText';
 
 export const metadata = {
   title: "Martin Portfolio",
@@ -29,7 +30,16 @@ function Home() {
           <p>Fade i scroll</p>
         </div>
       </ScrollAnimation>
+
+      <CircularText
+        text="REACT*BITS*COMPONENTS*"
+        onHover="speedUp"
+        spinDuration={20}
+        className="custom-class"
+      />
+      
       <ProjectsSection />
+
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HyperText } from "./hyper-text";
+
 
 interface HeroProps {
   name: string;
