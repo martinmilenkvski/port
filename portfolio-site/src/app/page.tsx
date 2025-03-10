@@ -1,6 +1,6 @@
 import React from "react";
 import Test from "./components/Test";
-import NavigationBar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
 import MotionBox from "./components/MotionBox";
 import ScrollAnimation from "./components/ScrollAnimation";
@@ -14,7 +14,7 @@ function Home() {
   return (
     <div>
       <MotionBox>
-        <NavigationBar />
+        <NavBar />
       </MotionBox>
 
       <MotionBox>

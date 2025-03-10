@@ -1,14 +1,18 @@
+import React from "react";
 import NavBar from "../../components/NavBar";
 import AboutMe from "../../components/AboutMe";
 
-export default function AboutPage() {
+export const metadata = {
+  title: "About Martin",
+};
+
+function AboutPage() {
   return (
     <div>
-      {/* Reuse your existing NavBar */}
-        <NavBar />
-
-      {/* Your About Me content */}
+      <NavBar />
       <AboutMe />
     </div>
   );
 }
+
+export default AboutPage;
