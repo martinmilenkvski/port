@@ -1,7 +1,12 @@
+import React from "react";
 import NavBar from "../../components/NavBar";
 import AboutMe from "../../components/AboutMe";
 
-export default function AboutPage() {
+export const metadata = {
+  title: "About Martin",
+};
+
+function AboutPage() {
   return (
     <div>
       <NavBar />
@@ -9,3 +14,5 @@ export default function AboutPage() {
     </div>
   );
 }
+
+export default AboutPage;
